@@ -1,0 +1,29 @@
+@import '../styles.scss';
+
+.example-spacer {
+    flex: 1;
+}
+
+.navbar {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.layout-container {
+    overflow-y: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex: auto
+    }
+
+    footer {
+        background-color: yellow;
+        height: 75px;
+    }
+}
