@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { NgHttpCachingModule, NgHttpCachingConfig  } from 'ng-http-caching';
 
 //Material UI
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -16,6 +17,12 @@ import { HeaderComponent } from './header/header.component';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FooterComponent } from './footer/footer.component';
+
+const ngHttpCachingConfig: NgHttpCachingConfig = {
+  lifetime: 1000 * 1000 // cache expire after 1000 seconds
+};
+
+
 
 @NgModule({
   declarations: [
@@ -32,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    NgHttpCachingModule.forRoot(ngHttpCachingConfig) 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,7 +20,5 @@ export class HeaderComponent implements OnInit {
         if (p.path) this.routerPaths.push(p.path)
       })
     }
-
-    console.log(this.routerPaths)
   }
 }
