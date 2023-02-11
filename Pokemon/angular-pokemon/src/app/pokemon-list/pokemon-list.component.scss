@@ -1,0 +1,13 @@
+.container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.flex-wrapper {
+    flex-direction: row;
+    display: flex;
+}
+
+.pokelist-card {
+    margin: 0.5rem;
+}

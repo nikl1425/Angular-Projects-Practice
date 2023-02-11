@@ -2,7 +2,8 @@ import { JsonPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PokedexService } from '../services/pokedex.service';
 import ConfigurationProvider from '../util/configurationProvider';
-import { PokemonListObj } from '../util/pokedex';
+import { Pokemon, PokemonDetails } from '../util/pokedex';
+import PokeConverter from '../util/converter';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -10,11 +11,11 @@ import { PokemonListObj } from '../util/pokedex';
   styleUrls: ['./pokemon-list.component.scss']
 })
 export class PokemonListComponent implements OnInit {
-  public pokemonList: PokemonListObj[] = [];
+  public pokemonList: PokemonDetails[] = [];
+  private PokeConverter = new PokeConverter();
 
+  constructor(private pokeService: PokedexService) { }
 
-  constructor(private pokeService : PokedexService) {}
-  
 
 
   ngOnInit(): void {
@@ -24,12 +25,13 @@ export class PokemonListComponent implements OnInit {
 
   GetListData(): void {
     const config = ConfigurationProvider.GetPokeListConfig;
-    console.log(config)
     this.pokeService.GetPokemonList(config).subscribe(data => {
-      this.pokemonList = data.results
+      data.results.forEach(pokemon => {
+        this.pokeService.GetPokemon(pokemon.url).subscribe(details => {
+          const pokeObj = this.PokeConverter.PokeApiToPokemon(details);
+          this.pokemonList.push(pokeObj)
+        })
+      })
     });
   }
-
-
-
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map, shareReplay } from 'rxjs/operators';
-import { PokeListReqConfig, PokeList } from '../util/pokedex';
+import { PokeListReqConfig, PokeList, Pokemon, PokemonDetails } from '../util/pokedex';
 
 
 
@@ -40,8 +40,18 @@ export class PokedexService {
         headers: this.GetBaseHeaders(),
         params
       }).pipe(map((response: any) => response),
-      shareReplay(1)
+        shareReplay(1)
       )
+  }
+
+
+  GetPokemon(uri: string, params?: HttpParams): Observable<PokemonDetails> {
+    return this.http.get<PokemonDetails>(uri, {
+      headers: this.GetBaseHeaders(),
+      params
+    }).pipe(map((response: any) => response),
+      shareReplay(1)
+    )
   }
 }
 

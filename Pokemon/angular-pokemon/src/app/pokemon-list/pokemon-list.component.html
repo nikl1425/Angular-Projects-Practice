@@ -1,1 +1,14 @@
-<p>pokemon-list works!</p>
+<div class="flex-wrapper">
+    <div class="container-grid">
+        <ng-container *ngFor="let pokemon of pokemonList">
+            <div class="pokelist-card">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>{{pokemon.name}}</mat-card-title>
+                        <img mat-card-lg-image src="{{pokemon.sprites.front_default}}" >
+                    </mat-card-header>
+                </mat-card>
+            </div>
+        </ng-container>
+    </div>
+</div>

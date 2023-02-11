@@ -11,6 +11,7 @@ import { NgHttpCachingModule, NgHttpCachingConfig  } from 'ng-http-caching';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 //Custom Components
 import { HeaderComponent } from './header/header.component';
@@ -39,6 +40,7 @@ const ngHttpCachingConfig: NgHttpCachingConfig = {
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
     HttpClientModule,
     NgHttpCachingModule.forRoot(ngHttpCachingConfig) 
   ],
