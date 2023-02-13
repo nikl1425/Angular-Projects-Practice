@@ -1,13 +1,49 @@
 .container-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.flex-wrapper {
-    flex-direction: row;
-    display: flex;
+.toolbar {
+    
+    width: 100%;
+    margin: 20px;
+    flex-grow: 1;
 }
+
+.float-right {
+    float: right;
+}
+
+.center {
+    justify-content: center;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.paging-toolbar {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.content-wrapper {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
 
 .pokelist-card {
-    margin: 0.5rem;
+    width: 250px;
+    margin: 0.8rem;
+}
+
+.text-center {
+    text-align: center;
+    font-weight: 600;
 }

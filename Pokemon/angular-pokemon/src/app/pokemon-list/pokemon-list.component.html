@@ -1,14 +1,32 @@
-<div class="flex-wrapper">
-    <div class="container-grid">
-        <ng-container *ngFor="let pokemon of pokemonList">
-            <div class="pokelist-card">
-                <mat-card>
-                    <mat-card-header>
-                        <mat-card-title>{{pokemon.name}}</mat-card-title>
-                        <img mat-card-lg-image src="{{pokemon.sprites.front_default}}" >
-                    </mat-card-header>
-                </mat-card>
+<div class="content-wrapper center">
+    <div class="toolbar center">
+        <div class="paging-toolbar">
+
+            <div class="float-right">
+                <button mat-raised-button color="accent">Prev</button>
+                
+                <button mat-raised-button color="accent">Next</button>
             </div>
-        </ng-container>
+        </div>
+    </div>
+    <div class="flex-wrapper ">
+        <div class="container-grid">
+            <ng-container *ngFor="let pokemon of pokemonList">
+                <div class="pokelist-card">
+                    <mat-card>
+                        <mat-card-header>
+                            
+                            <img class="margin-auto" mat-card-lg-image src="{{pokemon.sprites.front_default}}" >
+                            
+                        </mat-card-header>
+                        <mat-card-content>
+                            <mat-card-title class="title-card text-center">
+                                {{pokemon.name}}
+                            </mat-card-title>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </ng-container>
+        </div>
     </div>
 </div>
