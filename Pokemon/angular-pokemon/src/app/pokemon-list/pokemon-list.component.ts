@@ -13,6 +13,7 @@ import PokeConverter from '../util/converter';
 export class PokemonListComponent implements OnInit {
   public pokemonList: PokemonDetails[] = [];
   private PokeConverter = new PokeConverter();
+  pageNumber: number = 20;
 
   constructor(private pokeService: PokedexService) { }
 
@@ -22,6 +23,17 @@ export class PokemonListComponent implements OnInit {
     this.GetListData();
   }
 
+  GetNextPage(): void {
+    if(this.pageNumber >= 20) return;
+
+
+  }
+
+  GetPrevPage(): void {
+    if(this.pageNumber < 20) return;
+
+
+  }
 
   GetListData(): void {
     const config = ConfigurationProvider.GetPokeListConfig;

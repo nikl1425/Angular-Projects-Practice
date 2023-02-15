@@ -1,15 +1,18 @@
 <div class="content-wrapper center">
-    <div class="toolbar center">
-        <div class="paging-toolbar">
-
-            <div class="float-right">
-                <button mat-raised-button color="accent">Prev</button>
-                
-                <button mat-raised-button color="accent">Next</button>
+    <div class="width-wrap">
+        <div class="toolbar center">
+            <div class="paging-toolbar">
+    
+                <div class="float-right">
+                    <button mat-raised-button color="accent">Prev</button>
+                    
+                    <button mat-raised-button color="accent">Next</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="flex-wrapper ">
+    
+    <div class="width-wrap">
         <div class="container-grid">
             <ng-container *ngFor="let pokemon of pokemonList">
                 <div class="pokelist-card">
